@@ -1,0 +1,8 @@
+<view class='me_buddha'>
+<view class='me_buddha_cneter'>
+  <open-data type="userAvatarUrl"></open-data>
+</view>
+</view>
+<view class='me_p'>
+  <open-data type="userNickName" lang="zh_CN"></open-data>
+</view>
