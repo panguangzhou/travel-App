@@ -1,66 +1,58 @@
-// pages/me/me.js
+//index.js
+//获取应用实例
+const app = getApp()
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
+    src: "../../icon/logo.png",
+    src1: "../../icon/待付款.png",
+    src2: "../../icon/待发货.png",
+    src3: "../../icon/已发货.png",
+    src4: "../../icon/已完成.png",
+    bool: true,
+    logoBool: false,
+    moreCard: [
+      {
+        title: "我的会员卡"
+      }, {
+        title: "我的返现"
+      },
+      {
+        title: "我的礼品卡"
+      },
+      {
+        title: "我的存储卡"
+      },
+      {
+        title: "我的积分"
+      },
+      {
+        title: "我的优惠券"
+      },
+      {
+        title: "我的优惠码"
+      },
+      {
+        title: "我的礼物"
+      },
+      {
+        title: "分销员中心"
+      },
+      {
+        title: "我购买的专栏和内容"
+      },
+    ]
+  },
+  getTouXiang() {
+    this.setData({
+      bool: false,
+      logoBool: true
+    })
+  },
+  onPullDownRefresh() {
+    wx.showNavigationBarLoading()
+  },
+  onLoad: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

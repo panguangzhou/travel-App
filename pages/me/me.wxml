@@ -1,8 +1,83 @@
-<view class='me_buddha'>
-<view class='me_buddha_cneter'>
-  <open-data type="userAvatarUrl"></open-data>
+<!-- 头像居中 -->
+<view class='bigBody'>
+  <view class='top_header'>
+    <view class='logo'>
+      <open-data type="userAvatarUrl" class='small_logo' wx:if="{{logoBool}}"></open-data>
+      <image src="{{src}}" class='small_logo' bindtap='getTouXiang' wx:if="{{bool}}"></image>
+    </view>
+    <open-data type="userNickName" lang="zh_CN" wx:if="{{logoBool}}"></open-data>
+    <text wx:if="{{bool}}">点击显示微信头像</text>
+  </view>
+
+  <!-- 登录 -->
+  <view class='login'>
+    <text class='login_p'>登录手机号，同步全渠道订单和优惠券</text>
+    <button class='login_btn'>登录</button>
+  </view>
+  <!-- 我的订单 -->
+  <view class="weui-cells page__category-content">
+    <a class="weui-cell weui-cell_access js_item" data-id="button" href="javascript:;">
+      <view class="weui-cell__bd">
+        <text>我的订单</text>
+      </view>
+      <view class="weui-cell__ft">全部订单></view>
+    </a>
+  </view>
+  <!-- 我的卡包 -->
+  <view class='card'>
+    <view class="weui-flex">
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image src="{{src1}}" class='card-img'></image>
+          <text class='card_p'>待付款</text>
+        </view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image src="{{src2}}" class='card-img'></image>
+          <text class='card_p'>待发货</text>
+        </view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image src="{{src3}}" class='card-img'></image>
+          <text class='card_p'>已发货</text>
+        </view>
+      </view>
+      <view class="weui-flex__item">
+        <view class="placeholder">
+          <image src="{{src4}}" class='card-img'></image>
+          <text class='card_p'>已完成</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 购物车板块 -->
+  <view class="weui-cells page__category-content">
+    <a class="weui-cell weui-cell_access js_item" data-id="button" href="javascript:;">
+      <view class="weui-cell__bd">
+        <text>我的订单</text>
+      </view>
+      <view class="weui-cell__ft">></view>
+    </a>
+  </view>
+  <!-- 各种小卡片导航 -->
+  <view class='moreCard'>
+    <view class="page__category js_categoryInner" data-height="495" style="">
+      <view class="weui-cells page__category-content">
+        <a class="weui-cell weui-cell_access js_item"href="javascript:;" wx:for="{{moreCard}}">
+          <view class="weui-cell__bd">
+            <text>{{item.title}}</text>
+          </view>
+          <view class="weui-cell__ft">></view>
+        </a>
+      </view>
+    </view>
+  </view>
+<!-- 底部技术支持板块 -->
+<view class='support'>
+  <view class='support_box'>
+  <text>来自加班族的技术支持</text>
+  </view>
 </view>
-</view>
-<view class='me_p'>
-  <open-data type="userNickName" lang="zh_CN"></open-data>
 </view>
