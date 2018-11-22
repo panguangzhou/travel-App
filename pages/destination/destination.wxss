@@ -1,1 +1,92 @@
-/* pages/destination/destination.wxss */
+/* compoents/searchbar/searchbar.wxss */
+@import '/style/weui.wxss';
+/*公共样式 （百分比）*/
+.col-1{
+  width: 10%;
+}
+.col-2{
+  width: 20%;
+}
+.col-3{
+  width: 30%;
+}
+.col-4{
+  width: 40%;
+}
+.col-5{
+  width: 50%;
+}
+.col-1{
+  width: 10%;
+}
+.col-6{
+  width: 60%;
+}
+.col-7{
+  width: 70%;
+}
+.col-8{
+  width: 80%;
+}
+.col-9{
+  width: 90%;
+}
+.col-10{
+  width: 100%;
+}
+.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10{
+  float: left;
+  overflow: hidden;
+}
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+/* 选项卡 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.box{
+  width: 100%;
+}
+.box_item{
+  height: 50px;
+  background: #F5F5F5;
+  line-height: 50px;
+  font-size:12px;
+  text-align:center;
+}
+.box_active{
+  height: 50px;
+  background: #fff;
+  border-left:3px solid orange;
+  line-height: 50px;
+  font-szie:16px;
+  text-align:center;
+}
+.box .col-7{
+  height: 600px;
+}
+/* 钱的颜色 */
+.weui-media-box__desc{
+  color:gold;
+}
+.bgImg{
+  display:block;
+  margin-left:200rpx; 
+  width: 15px;
+  height: 15px;
+}
+/* 搜索卡 */
+.search{
+  width: 100%;
+  height: 600px;
+}/* pages/destination/destination.wxss */

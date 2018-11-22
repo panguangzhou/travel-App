@@ -1,0 +1,2 @@
+/* components/bottom/bottom.wxss */
+@import '/style/weui.wxss';

@@ -1,101 +1,108 @@
+<!-- 头部轮播图 -->
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="100%" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- nav选项卡 -->
 <view class="page">
-  <view class="page__bd">
-    <view class="weui-search-bar">
-      <view class="weui-search-bar__form">
-        <view class="weui-search-bar__box">
-          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
-          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
-            <icon type="clear" size="14"></icon>
-          </view>
+    <view class="page__hd">
+        <view class="weui-flex">
+            <view class="weui-flex__item"><view class="placeholder">
+            <text>GUIDED TOUR</text>
+            <text>领队自由行</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+            <text>CUSTOMIZATION</text>
+            <text>定制自由行</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+            <text>LOCAL  PLAY</text>
+            <text>当地玩乐</text>
+            </view></view>
+            <view class="weui-flex__item"><view class="placeholder">
+            <text>BUY BUY BUY</text>
+            <text>买买买</text>
+            </view></view>
         </view>
-        <label class="weui-search-bar__label" bindtap="showInput" wx:if="{{inputShowed}}">
-          <icon class="weui-icon-search" type="search" size="14"></icon>
-          <view class="weui-search-bar__text">搜索</view>
-        </label>
-      </view>
-      <view class="weui-search-bar__cancel-btn" bindtap="hideInput" wx:if="{{!inputShowed}}">取消</view>
     </view>
-  </view>
 </view>
-<!-- 选项卡 -->
-<view class='box' wx:if="{{inputShowed}}">
-  <!-- 左边菜单栏 -->
-  <view class='col-3'>
-    <scroll-view scroll-y="true" style="height: 950rpx;" scroll-with-animation="true">
-      <view class='{{page==item.ids?"box_active":"box_item"}}' wx:for="{{listCard}}" id="{{index}}" bindtap='clickChange'>{{item.name}}</view>
-    </scroll-view>
-  </view>
-  <!-- 右边选项 -->
-  <view class='col-7'>
-    <scroll-view scroll-y="true" style="height: 950rpx;" scroll-with-animation="true">
-      <view class="page">
-        <view class="weui-panel weui-panel_access">
-          <view class="weui-panel__hd">主题旅游</view>
-          <view class="weui-panel__bd">
-            <navigator wx:for="{{zhuti}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{item.src}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="weui-media-box__desc">￥{{item.price}}</view>
-              </view>
-            </navigator>
-          </view>
-          <view class="weui-panel__hd">境外精选</view>
-          <view class="weui-panel__bd">
-            <navigator wx:for="{{jingwai}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{item.src}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="weui-media-box__desc">￥{{item.price}}</view>
-              </view>
-            </navigator>
-          </view>
-          <view class="weui-panel__hd">东北</view>
-          <view class="weui-panel__bd">
-            <navigator wx:for="{{dongbei}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{item.src}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="weui-media-box__desc">￥{{item.price}}</view>
-              </view>
-            </navigator>
-          </view>
-          <view class="weui-panel__hd">四川</view>
-          <view class="weui-panel__bd">
-            <navigator wx:for="{{sichuang}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{item.src}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="weui-media-box__desc">￥{{item.price}}</view>
-              </view>
-            </navigator>
-          </view>
-          <view class="weui-panel__hd">云南</view>
-          <view class="weui-panel__bd">
-            <navigator wx:for="{{yunnan}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
-              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
-                <image class="weui-media-box__thumb" src="{{item.src}}" />
-              </view>
-              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
-                <view class="weui-media-box__title">{{item.name}}</view>
-                <view class="weui-media-box__desc">￥{{item.price}}</view>
-              </view>
-            </navigator>
-          </view>
+<!-- 搜索栏 -->
+<view class="weui-search-bar">
+            <view class="weui-search-bar__form">
+                <view class="weui-search-bar__box">
+                    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                    <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+                    <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+                        <icon type="clear" size="14"></icon>
+                    </view>
+                </view>
+                <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+                    <icon class="weui-icon-search" type="search" size="14"></icon>
+                    <view class="weui-search-bar__text">稻城亚丁</view>
+                </label>
+            </view>
+            <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+</view>
+<scroll-view scroll-x="true">  
+<view class="uploadWrap" scroll-x="true">  
+  <view class="upload_Item">
+  <image src='https://imgs.qunarzz.com/p/p79/201302/28/aed3769b586e4c6d93835fbb.jpg_150x100_6df8c9bc.jpg'></image>
+  </view>  
+  <view class="upload_Item">  
+    <image src='https://imgs.qunarzz.com/p/p42/201302/28/c69c041a19fa32f893835fbb.jpg_150x100_730f7aa3.jpg'></image>
+  </view>  
+  <view class="upload_Item">  
+    <image src='https://imgs.qunarzz.com/p/p22/1409/28/85f01f692f53ff90ffffffffc8d65eac.jpg_150x100_b785c4e0.jpg'></image>
+  </view>  
+  <view class="upload_Item">  
+   <image src='https://imgs.qunarzz.com/p/p99/201302/28/84f1e9ef02dacba693835fbb.jpg_150x100_a672c81c.jpg'></image>
+  </view>  
+  <view class="upload_Item">  
+    <image src='https://imgs.qunarzz.com/p/p16/201302/28/67d920665e40096b93835fbb.jpg_150x100_f4c0da65.jpg'></image>
+  </view>  
+  <view class="upload_Item">  
+  <image src='https://imgs.qunarzz.com/sight/p14/201211/02/62e69c9f070b97d093835fbb.jpg_150x100_52849d9b.jpg'></image>
+  </view>  
+</view>  
+</scroll-view>
+
+<!--主要展示区域 -->
+<view class="page">
+    <view class="page__bd page__bd_spacing">
+        <view class="weui-flex">
+            <view class="weui-flex__item top"><view class="placeholder">
+             <image src='https://imgs.qunarzz.com/p/tts1/1806/ea/4f41212cbc8a2102.jpg_r_480x320x90_c57ac7e3.jpg'></image>
+            </view></view>
         </view>
-      </view>
-    </scroll-view>
-  </view>
-</view>
-<!-- 搜索卡 -->
-<view class='search' wx:if="{{!inputShowed}}">
+        <view class="weui-flex">
+            <view class="weui-flex__item demo"><view class="placeholder">
+            <view class='item'>
+              <image src='https://imgs.qunarzz.com/p/p62/1409/28/4a40f0c05e4c8100ffffffffc8d65eac.jpg_150x100_16a756df.jpg'></image>
+              <text>hello world</text>
+              <text>埃及金字塔</text>
+            </view>
+            </view></view>
+            <view class="weui-flex__item demo"><view class="placeholder">
+            <view class='item'>
+              <image src='https://imgs.qunarzz.com/p/p70/1809/e7/4941057a6aae702.jpg_150x100_82fcac64.jpg'></image>
+            </view>
+            </view></view>
+        </view>
+       <view class="weui-flex">
+            <view class="weui-flex__item demo"><view class="placeholder">
+            <view class='item'>
+              <image src='https://imgs.qunarzz.com/p/p91/201302/28/35da8ba729d4df3293835fbb.jpg_150x100_04fd01ed.jpg'></image>
+            </view>
+            </view></view>
+            <view class="weui-flex__item demo"><view class="placeholder">
+            <view class='item'>
+              <image src='https://imgs.qunarzz.com/p/p47/201212/03/31ab0a4d2ff0092393835fbb.jpg_150x100_c8cca52b.jpg'></image>
+            </view>
+            </view></view>
+        </view>
+    </view>
 </view>

@@ -14,6 +14,7 @@ Page({
     moreCard: [
       {
         title: "我的会员卡"
+
       }, {
         title: "我的返现"
       },
@@ -39,7 +40,8 @@ Page({
         title: "分销员中心"
       },
       {
-        title: "我购买的专栏和内容"
+        title: "我购买的专栏和内容",
+        src:"/components/mezhuanlan/mezhuanlan"
       },
     ]
   },

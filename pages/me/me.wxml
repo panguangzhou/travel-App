@@ -65,12 +65,12 @@
   <view class='moreCard'>
     <view class="page__category js_categoryInner" data-height="495" style="">
       <view class="weui-cells page__category-content">
-        <a class="weui-cell weui-cell_access js_item"href="javascript:;" wx:for="{{moreCard}}">
+        <navigator class="weui-cell weui-cell_access js_item" href="javascript:;" wx:for="{{moreCard}}" url="{{item.src}}">
           <view class="weui-cell__bd">
             <text>{{item.title}}</text>
           </view>
           <view class="weui-cell__ft">></view>
-        </a>
+        </navigator>
       </view>
     </view>
   </view>

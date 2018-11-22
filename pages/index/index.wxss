@@ -1,86 +1,47 @@
-/* compoents/searchbar/searchbar.wxss */
-@import '/style/weui.wxss';
-/*公共样式 （百分比）*/
-.col-1{
-  width: 10%;
+@import '../../style/weui.wxss';
+@import '../../style/weuiFlex.wxss';
+.slide-image{
+  display: block;
+  border-radius: 10px;
 }
-.col-2{
-  width: 20%;
+.weui-flex__item{
+  width: 25%;
+  height: 50px;
+  overflow: hidden;
+  padding: 10px;
+  font-size: 8px;
 }
-.col-3{
-  width: 30%;
+.weui-search-bar__form{
+  border-radius: 50%;
+  background: yellow
 }
-.col-4{
-  width: 40%;
-}
-.col-5{
-  width: 50%;
-}
-.col-1{
-  width: 10%;
-}
-.col-6{
-  width: 60%;
-}
-.col-7{
-  width: 70%;
-}
-.col-8{
-  width: 80%;
-}
-.col-9{
-  width: 90%;
-}
-.col-10{
-  width: 100%;
-}
-.col-1,.col-2,.col-3,.col-4,.col-5,.col-6,.col-7,.col-8,.col-9,.col-10{
-  float: left;
+.uploadWrap{width:100%; display: flex; display: -webkit-box; flex-direction: column;}  
+.upload_Item{ 
+  width: 160rpx;
+  height: 160rpx;
+  padding:10px 15px 10px 15px;
+  flex: 1;
+  }  
+.upload_Item>image{width:100%;height: 100%;border-radius: 15px;}
+/* 主要商品展示区域 */
+.weui-flex .top{
+  height: 160px;
+  padding: 10px;
   overflow: hidden;
 }
-.searchbar-result{
-    margin-top: 0;
-    font-size: 14px;
-}
-.searchbar-result:before{
-    display: none;
-}
-.weui-cell{
-    padding: 12px 15px 12px 35px;
-}
-/* 选项卡 */
-::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  color: transparent;
-}
-.box{
+.weui-flex .top image{
+  height: 160px;
   width: 100%;
+  border-radius: 10px;
 }
-.box_item{
-  height: 50px;
-  background: #F5F5F5;
-  line-height: 50px;
-  font-size:12px;
-  text-align:center;
-}
-.box_active{
-  height: 50px;
-  background: #fff;
-  border-left:3px solid orange;
-  line-height: 50px;
-  font-szie:16px;
-  text-align:center;
-}
-.box .col-7{
-  height: 600px;
-}
-/* 钱的颜色 */
-.weui-media-box__desc{
-  color:gold;
-}
-/* 搜索卡 */
-.search{
+.weui-flex .demo{
   width: 100%;
-  height: 600px;
+  height: 130px;
+  overflow: hidden;
 }
+.weui-flex .item image{
+  height: 100px;
+  width: 100%;
+  border-radius: 10px;
+}
+

@@ -1,2 +1,126 @@
-<!--pages/destination/destination.wxml-->
-<text>pages/destination/destination.wxml</text>
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" focus="{{inputShowed}}" bindinput="inputTyping" value="{{inputValues}}"/>
+          <view class="weui-icon-clear" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" bindtap="showInput" wx:if="{{inputShowed}}">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" bindtap="hideInput" wx:if="{{!inputShowed}}">取消</view>
+    </view>
+  </view>
+</view>
+<!-- 选项卡 -->
+<view class='box' wx:if="{{inputShowed}}">
+  <!-- 左边菜单栏 -->
+  <view class='col-3'>
+    <scroll-view scroll-y="true" style="height: 950rpx;" scroll-with-animation="true">
+      <view class='{{page==item.ids?"box_active":"box_item"}}' wx:for="{{listCard}}" id="{{index}}" bindtap='clickChange'>{{item.name}}</view>
+    </scroll-view>
+  </view>
+  <!-- 右边选项 -->
+  <view class='col-7'>
+    <scroll-view scroll-y="true" style="height: 950rpx;" scroll-with-animation="true">
+      <view class="page">
+        <view class="weui-panel weui-panel_access">
+          <view class="weui-panel__hd">主题旅游</view>
+          <view class="weui-panel__bd">
+            <navigator wx:for="{{zhuti}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.src}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="weui-media-box__desc">￥{{item.price}}
+                  <image src='../../icon/添加.png' class='bgImg'></image>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="weui-panel__hd">境外精选</view>
+          <view class="weui-panel__bd">
+            <navigator wx:for="{{jingwai}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.src}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="weui-media-box__desc">￥{{item.price}}
+                  <image src='../../icon/添加.png' class='bgImg'></image>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="weui-panel__hd">东北</view>
+          <view class="weui-panel__bd">
+            <navigator wx:for="{{dongbei}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.src}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="weui-media-box__desc">￥{{item.price}}
+                  <image src='../../icon/添加.png' class='bgImg'></image>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="weui-panel__hd">四川</view>
+          <view class="weui-panel__bd">
+            <navigator wx:for="{{sichuang}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.src}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="weui-media-box__desc">￥{{item.price}}
+                  <image src='../../icon/添加.png' class='bgImg'></image>
+                </view>
+              </view>
+            </navigator>
+          </view>
+          <view class="weui-panel__hd">云南</view>
+          <view class="weui-panel__bd">
+            <navigator wx:for="{{yunnan}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+              <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+                <image class="weui-media-box__thumb" src="{{item.src}}" />
+              </view>
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">{{item.name}}</view>
+                <view class="weui-media-box__desc">￥{{item.price}}
+                  <image src='../../icon/添加.png' class='bgImg'></image>
+                </view>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<!-- 搜索卡 -->
+<view class='search' wx:if="{{!inputShowed}}">
+  <view class="weui-panel__bd">
+    <navigator wx:for="{{inputVal}}" wx:key="{{index}}" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+        <image class="weui-media-box__thumb" src="{{item.src}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{item.name}}</view>
+        <view class="weui-media-box__desc">￥{{item.price}}
+          <image src='../../icon/添加.png' class='bgImg'></image>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>
+<btn></btn>
+<button bindtap=''></button>

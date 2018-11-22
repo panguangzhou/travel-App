@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/destination/destination",
     "pages/cart/cart",
-    "pages/me/me"
+    "pages/me/me",
+    "components/mezhuanlan/mezhuanlan"
   ],
   "window": {
     "backgroundTextStyle": "light",
